@@ -1,0 +1,49 @@
+CREATE DATABASE student_db;
+USE student_db;
+CREATE TABLE Students (
+  student_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100)
+);
+
+CREATE TABLE Courses (
+	courses_id INT PRIMARY KEY,
+    course_name VARCHAR(100),
+    instructor VARCHAR(100)
+);
+
+CREATE TABLE Grades (
+	grade_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    grade INT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
+);
+
+INSERT INTO Student VALUES (1, 'John', 'Doe', 'john@example.com');
+INSERT INTO Student VALUES (2, 'Jane', 'Smith', 'jane@example.com');
+INSERT INTO Students VALUES (3, 'Ali', 'Khan', 'ali@example.com');
+
+INSERT INTO Courses VALUES (101, 'Math', 'Mr. Adams');
+INSERT INTO Courses VALUES (102, 'Science', 'Dr. Brown');
+
+INSERT INTO Grades VALUES(1, 1, 101, 88);
+INSERT INTO Grades VALUES(2, 1, 102, 92);
+INSERT INTO Grades VALUES(3, 2, 101, 75);
+INSERT INTO Grades VALUES(4, 3, 101, 90);
+INSERT INTO Grades VALUES(5, 3, 102, 85);
+
+SELECT s.first_name, s.last_name, g.grade
+FROM Grades g
+JOIN Student s ON g.student_id = s.student_id
+WHERE g.grade > 85;
+
+SELECT s.first_name, s.last_name, g.grade
+FROM grades g
+JOIN Students s ON g.student_id = s.student_id
+JOIN Courses c ON g.course_id = c.course_id
+WHERE c.course_name = 'Math'
+ORDER BY g.grade DESC
+LIMIT 2; 
