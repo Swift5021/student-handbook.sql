@@ -7,17 +7,22 @@ This is a beginner-level SQL project that creates a simple gradebook system usin
 
 ## 🚀 How to Run This Project
 
-1. **Download the `student_db.sql` file** from this repository.
+Download the student_db.sql.txt file from this repository.
+(If the file ends in .sql.txt, you can rename it to just .sql for easier use.)
 
-2. **Open MySQL Workbench** and connect to your local MySQL server.
+Open MySQL Workbench and connect to your local MySQL server.
 
-3. In MySQL Workbench:
-   - Go to **File > Open SQL Script**
-   - Select the `student_db.sql` file
-   - Click the **lightning bolt button (⚡️)** to execute the full script  
-     *(or run each section manually to watch it step-by-step)*
+In MySQL Workbench:
 
-4. Once executed:
+Go to File > Open SQL Script...
+
+Select the student_db.sql or student_db.sql.txt file
+(or open it in Notepad, copy the contents, and paste it into a new SQL tab in Workbench)
+
+Click the ⚡️ lightning bolt button to execute the full script
+(or run it section by section to follow along)
+
+Once executed:
    - A database named `student_db` will be created
    - Three tables will be set up: `Students`, `Courses`, and `Grades`
    - Sample data will be inserted
@@ -33,5 +38,5 @@ This is a beginner-level SQL project that creates a simple gradebook system usin
 
 ## About This Project
 
-This is my personal project — I’m still learning, so I apologize if some instructions aren’t very clear.
+This is my personal project — I’m still learning, so I apologize if some of my instructions aren’t very clear.
 Feel free to explore, use, and improve the code!
