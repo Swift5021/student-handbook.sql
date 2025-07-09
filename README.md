@@ -1,4 +1,3 @@
-# student-handbook.sql
 
 # Student Gradebook Database (SQL Project)
 
